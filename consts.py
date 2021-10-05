@@ -2,12 +2,6 @@ from telegram import InlineKeyboardButton
 from telegram.utils.helpers import escape_markdown as es
 
 
-'''def welcome_msg():
-    welcome_msg = '''<b>Welcome To the Bot</b>🖐🖐
- <i>Send me anyones instagram username or profile url to get their DP</i>
- ex : <b>virat.kohli</b> , <b>thenameisyash</b> etc'''
-
-    return welcome_msg '''
 
 
 def acc_type(val):
