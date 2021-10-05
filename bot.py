@@ -26,6 +26,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+import pyrogram
 from pyrogram import Client, Filters, StopPropagation, InlineKeyboardButton, InlineKeyboardMarkup
 
 
