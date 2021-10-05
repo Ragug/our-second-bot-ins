@@ -8,6 +8,7 @@ import time
 from consts import *
 import re
 
+
 '''made by RAGU G 😃😃😃😃'''
 
 
@@ -25,11 +26,20 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+from pyrogram import Client, Filters, StopPropagation, InlineKeyboardButton, InlineKeyboardMarkup
 
-def start(update, context):
-    id = update.message.chat_id
-    name = update.message.from_user['username']
-    update.message.reply_html(welcome_msg())
+
+@Client.on_message(Filters.command(["start"]), group=-2)
+async def start(client, message):
+    # return
+    joinButton = InlineKeyboardMarkup([
+        [InlineKeyboardButton("Channel", url="https://t.me/aryan_bots")],
+        [InlineKeyboardButton(
+            "Report Bugs 😊", url="https://t.me/aryanvikash")]
+    ])
+    welcomed = f"Hey <b>{message.from_user.first_name}</b>\n/help for More info"
+    await message.reply_text(welcomed, reply_markup=joinButton)
+    raise StopPropagation
 
 
 def help_msg(update, context):
